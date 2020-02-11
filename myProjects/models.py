@@ -13,9 +13,9 @@ class Topic(models.Model):
 
 class Entry(models.Model):
     """学到的有关某个主体的具体知识"""
-    topic = models.ForeignKey(Topic, on_delete=models.CASCADE)
     text = models.TextField()
     date_added = models.DateTimeField(auto_now_add=True)
+    topic = models.ForeignKey(Topic, on_delete=models.DO_NOTHING)
 
     class Meta:
         verbose_name_plural = 'entries'
