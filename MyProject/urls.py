@@ -15,13 +15,16 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+#from django.urls import re_path
 from django.conf.urls import include
-from django.conf.urls import url
+#from django.conf.urls import url
+from myProjects import urls
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    url(r'', include(('myProjects.urls', 'myProjects'), namespace='myProjects')),
+    path('', include(('myProjects.urls', 'myProjects'), namespace='myProjects')),
     # 这个正则表达式应该可以改成通配符
-    url(r'^topics/$', include(('myProjects.urls', 'myProjects'), namespace='myProjects')),
-    url(r'^topics/(?P<topic_id>\\d+)/$', include(('myProjects.urls', 'myProjects'), namespace='myProjects')),
+    #re_path('^topics/$', include(('myProjects.urls', 'myProjects'), namespace='myProjects')),
+    #url(r'^topics/(?P<topic_id>\d+)/$', include(('myProjects.urls', 'myProjects'), namespace='myProjects')),
+    #re_path('^topics/(?P<topic_id>\d+)/$', include(('myProjects.urls', 'myProjects'), namespace='myProjects')),
 ]
