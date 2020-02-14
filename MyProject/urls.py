@@ -19,12 +19,10 @@ from django.urls import path
 from django.conf.urls import include
 #from django.conf.urls import url
 from myProjects import urls
+from users improt urls 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include(('myProjects.urls', 'myProjects'), namespace='myProjects')),
-    # 这个正则表达式应该可以改成通配符
-    #re_path('^topics/$', include(('myProjects.urls', 'myProjects'), namespace='myProjects')),
-    #url(r'^topics/(?P<topic_id>\d+)/$', include(('myProjects.urls', 'myProjects'), namespace='myProjects')),
-    #re_path('^topics/(?P<topic_id>\d+)/$', include(('myProjects.urls', 'myProjects'), namespace='myProjects')),
+    path('users/', include(('users.urls', 'users'), namespace='users')),
 ]
