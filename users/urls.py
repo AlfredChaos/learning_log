@@ -2,10 +2,10 @@
 
 #from django.conf.urls import url
 from django.urls import path
-from django.contrib.auth.views import login
+from django.contrib.auth.views import LoginView
 from . import views
 
 urlPatterns = [
     # 登录界面
-    path('login/', login, {'template_name': 'users/login.html'}, name='login'),
+    path('login/', LoginView.as_view, {'template_name': 'users/login.html'}, name='login'),
 ]

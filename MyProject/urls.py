@@ -19,7 +19,7 @@ from django.urls import path
 from django.conf.urls import include
 #from django.conf.urls import url
 from myProjects import urls
-from users improt urls 
+from users import urls 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
